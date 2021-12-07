@@ -11,7 +11,7 @@
 <body>
 
   <header class="navigation"> asdasffjsksksksk
-
+    Samo je frajer
   </header>
 
   <main class="website-content">
