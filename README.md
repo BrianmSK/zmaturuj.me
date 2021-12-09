@@ -1,6 +1,5 @@
 # zmaturuj.me
 
-<<<<<<< HEAD
 Maturitná práca - SSOŠ Pro scholaris - 4.AC
 
 Made by **[Denis Uhrík](mailto:uhrikdenis@gmail.com)** &amp; **Samuel Hoskovec**
