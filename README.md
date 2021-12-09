@@ -8,7 +8,7 @@ Made by **[Denis Uhrík](mailto:uhrikdenis@gmail.com)** &amp; **Samuel Hoskovec*
 
 ## Systém prihlasovania na DP a BP
 
-> [] Vytvorte systém umožňujúci prihlasovanie na DP (diplomové práce) a BP (bakalárske projekty) cez Internet. Systém by sa mal skladať z viacerých modulov.
+> [x] Vytvorte systém umožňujúci prihlasovanie na DP (diplomové práce) a BP (bakalárske projekty) cez Internet. Systém by sa mal skladať z viacerých modulov.
 
 ## Vlastnosti modulov:
 
