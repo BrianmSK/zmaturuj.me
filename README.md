@@ -64,4 +64,4 @@ Made by **[Denis Uhrík](mailto:uhrikdenis@gmail.com)** &amp; **Samuel Hoskovec*
 >
 > > [] zadané údaje odoslať na emailovú adresu vedúceho DP/BP
 > >
-> > # [] ešte raz vypíše všetky položky
+> > [] ešte raz vypíše všetky položky
