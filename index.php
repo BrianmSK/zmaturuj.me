@@ -14,17 +14,17 @@
   <main class="website-content">
     <h1>Prihlásenie</h1>
     <form action="login_form.php" method="POST">
-      <div class="container">
-        <input type="text" placeholder="Zadajte vase prihlasovacie meno" required class="nameInput">
+      <input type="text" placeholder="Zadajte vaše prihlasovacie meno" required class="nameInput">
 
-        <input type="password" placeholder="Zadajte heslo" required class="passwordInput">
+      <input type="password" placeholder="Zadajte heslo" required class="passwordInput">
 
-        <button type="submit">Prihlásenie</button>
+      <button type="submit" class="buttonInput">Prihlásenie</button>
 
-        <label>
-          <input type="checkbox" checked="checked" name="remember"> Zapamätajte si ma
-        </label>
-      </div>
+      <label class="checkboxContainer">
+        <input type="checkbox" checked="checked" name="remember" class="checkboxInput">
+        Zapamätajte si ma
+      </label>
+
     </form>
   </main>
 
