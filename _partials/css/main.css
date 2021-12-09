@@ -34,29 +34,42 @@ footer {
 }
 footer h2 {
   font-size: 16px;
+  text-shadow: 2px 2px black;
 }
 main {
   width: 35vw;
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   align-content: center;
   flex-direction: column;
   text-align: center;
 }
-input {
+input.nameInput,
+input.passwordInput {
+  box-sizing: border-box;
+  margin: 0 0 0 0;
+  margin-bottom: 1.5rem;
   color: black;
   padding: 10px 10px;
-  font-size: 1rem;
-  /* border-width: calc(var(--border-width) * 1px);
   border-style: solid;
-  border-color: var(--accent); */
+  border-color: #303030;
   border-radius: 15px;
   text-align: left;
   width: 100%;
-  transition: border-color calc(var(--transition, 0.2) * 1s) ease;
 }
-input.nameInput,
-input.passwordInput {
-  margin-bottom: 2rem;
+
+button.buttonInput {
+  width: 100%;
+  background: #8c00ff;
+  color: white;
+  padding: 10px 10px;
+  border-radius: 15px;
+  border-color: #8c00ff;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  text-shadow: 2px 2px black;
 }
