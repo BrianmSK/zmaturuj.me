@@ -22,7 +22,7 @@ Made by **[Denis Uhrík](mailto:uhrikdenis@gmail.com)** &amp; **Samuel Hoskovec*
 > >
 > > [] akademický rok
 > >
-> > [] meno/priezvisko/titul diplomanta/bakal�ra
+> > [] meno/priezvisko/titul diplomanta/bakalára
 > >
 > > [] email diplomanta/bakalára
 >
