@@ -1,50 +1,38 @@
 <?php
 
-if (isset($_POST['submit'])) {
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
-  require_once '../../config/config.php'; // INCLUDE CONFIG
-  require_once '../../classes/authcode.php'; // PASSWORD GENERATOR
+require '..\classes\PHPMailer\exception.php';
+require '..\classes\PHPMailer\mail.php';
+require '..\classes\PHPMailer\smtp.php';
+
+//Create an instance; passing `true` enables exceptions
+$mail = new PHPMailer(true);
+
+try {
+  //Server settings
+  $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+  $mail->isSMTP();                                            //Send using SMTP
+  $mail->Host       = 'smtp.example.com';                     //Set the SMTP server to send through
+  $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+  $mail->Username   = 'user@example.com';                     //SMTP username
+  $mail->Password   = 'secret';                               //SMTP password
+  $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
+  $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
   //Recipients
-  $mail->addAddress($_POST['email']);     //Add a recipient
+  $mail->setFrom('info@denisuhrik.com', 'Zmaturuj.me');
+  $mail->addAddress('uhrikdenis@gmail.com', 'Denis Uhrík');     //Add a recipient
 
-  $password = authCode(); // GENERATE PASSWORD
-  $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-  $mail_check = $connection->prepare("
-      SELECT email
-      FROM users
-      WHERE EXISTS 
-      (SELECT email from users WHERE email = :email)
-  ");
-  $mail_check->bindParam(":email", $_POST['email']);
-  $mail_check->execute();
-  $exists = $mail_check->fetch(PDO::FETCH_ASSOC);
-  if ($exists) {
-    $msg->error('User already exists!', 'http://localhost/zmaturuj.me/', true);
-  } else {
+  //Content
+  $mail->isHTML(true);                                  //Set email format to HTML
+  $mail->Subject = 'Here is the subject';
+  $mail->Body    = 'This is the HTML message body <b>in bold!</b>';
+  $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
-    $insert = $connection->prepare("
-    INSERT INTO users (email, password) 
-    VALUES (:email, :password);
-    "); // PREPARE SQL QUERY TO INSERT DATA
-
-    $insert->bindParam(":email", $_POST['email']);
-    $insert->bindParam(":password", $hashed_password);
-    $insert->execute();
-    //Content
-    $mail->isHTML(true);                                  //Set email format to HTML
-    $mail->Subject = 'Your account has been generated';
-    $mail->Body    = 'Your account has been successfully generated your credentials are
-                      <br><b>E-mail: ' . $_POST['email'] . '</b>
-                      <br> <b>Password: ' . $password . '</b>
-                      <br> Please login and change your password: <a href="localhost/zmaturuj.me/">here</a>! ';
-    $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
-    if ($mail->send()) {
-      $msg->success('User added', 'http://localhost/zmaturuj.me/, true');
-    } else {
-      $msg->error('Message could not be sent. Mailer Error', 'http://localhost/zmaturuj.me/, true');
-    }
-  }
-} else {
-  header("Location: /zmaturuj.me/error");
+  $mail->send();
+  echo 'Message has been sent';
+} catch (Exception $e) {
+  echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }
