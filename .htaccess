@@ -1,12 +1,13 @@
-//Change default directory page
-DirectoryIndex /public
+#default index page
+DirectoryIndex public/index.php
 
-//Prevent viewing of .htaccess file
-<Files .htaccess>
-order allow,deny
-deny from all
-</Files>
+Options +FollowSymLinks
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond $1 !^(index\.php|public|css|js|png|jpg|gif|robots\.txt)
+RewriteRule ^(.*)$ public/index.php [NC,L]
 
-//Prevent directory listings
-Options All -Indexes
- 
+
+#RewriteRule ^(.*)$ public/index.php/params=$1 [L,QSA]
+#ErrorDocument 404 public/index.php
