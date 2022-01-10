@@ -41,7 +41,7 @@ if (isset($_POST['submit'])) {
                       <br> Please login and change your password: <a href="localhost/zmaturuj.me/">here</a>! ';
     $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
     if ($mail->send()) {
-      $msg->success('User added', 'http://localhost/zmaturuj.me/, true');
+      $msg->success('User added', 'http://localhost/zmaturuj.me/', true);
     } else {
       $msg->error('Message could not be sent. Mailer Error', 'http://localhost/zmaturuj.me/, true');
     }
