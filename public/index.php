@@ -13,4 +13,5 @@ if ($path == "/generate") {
 }
 if ($path == "/error") {
   include_once("../views/error/404.html");
+  die();
 }
