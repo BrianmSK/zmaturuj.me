@@ -55,3 +55,6 @@ $RECYCLE.BIN/
 
 # Config file
 /config/config.php
+
+#ENV
+.env
