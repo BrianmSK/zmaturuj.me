@@ -1,0 +1,6 @@
+repos:  - repo: https://github.com/BrianMSK/zmaturuj.me
+           rev: main
+           hooks:
+                - id: ggshield
+                language_version: python3
+                stages: [commit],[push]
