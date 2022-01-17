@@ -63,9 +63,9 @@ composer update && composer upgrade
 
 #### [GitGuardian setup](https://docs.gitguardian.com/internal-repositories-monitoring/integrations/git_hooks/pre_push)
 
-**Use only if you want to use pre-push by GitGuardian❗**
-
 **Beaware:**
+
+**Use only if you want to use pre-push by GitGuardian❗**
 
 - **Don't forget there has to be .env file with API to GitGuardian❗**
 
