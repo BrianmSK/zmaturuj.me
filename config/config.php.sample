@@ -9,9 +9,9 @@ $password = "password";
 
 //Mail Variables
 $smtphost = "localhost"
-$
-$emailusername = ""
-$emailpassword
+$emailport = "995"
+$emailusername = "username"
+$emailpassword = "password"
 
 // Start a Session
 if (!session_id()) @session_start();
@@ -39,7 +39,7 @@ $mail->Username   = '$emailusername';                     //SMTP username
 $mail->Password   = '$emailpassword';                               //SMTP password
 $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
 $mail->Port       = $emailport;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
-$mail->setFrom('info@denisuhrik.com', 'Zmaturuj.me');
+$mail->setFrom('$emailusername', 'Zmaturuj.me');
 
 
 // Instantiate the class
