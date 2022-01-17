@@ -58,3 +58,6 @@ $RECYCLE.BIN/
 
 #ENV
 .env
+
+#ggshield
+.cache_ggshield
