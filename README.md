@@ -1,10 +1,27 @@
+<div align="center">
+
 # zmaturuj.me🥳
 
+<p float="left">
+
+<img src="https://img.shields.io/github/languages/count/brianmsk/zmaturuj.me?style=flat-square" />
+<img src="https://img.shields.io/github/languages/top/brianmsk/zmaturuj.me?style=flat-square" />
+<img src="https://img.shields.io/tokei/lines/github/brianmsk/zmaturuj.me?style=flat-square" />
+<img src="https://img.shields.io/github/repo-size/brianmsk/zmaturuj.me?style=flat-square" />
+<img src="https://img.shields.io/github/issues-pr-closed-raw/brianmsk/zmaturuj.me?style=flat-square" />
+<img src="https://img.shields.io/github/license/brianmsk/zmaturuj.me?style=flat-square" />
+<img src="https://img.shields.io/github/contributors/brianmsk/zmaturuj.me?style=flat-square" />
+<img src="https://img.shields.io/github/commit-activity/y/brianmsk/zmaturuj.me?style=flat-square" />
+<img src="https://img.shields.io/github/last-commit/brianmsk/zmaturuj.me?style=flat-square" />
+
+</p>
 Maturitná práca - SSOŠ Pro scholaris - 4.AC
 
-Made by **[Denis Uhrík](mailto:uhrikdenis@gmail.com)** &amp; **Samuel Hoskovec**
+Made by **[Denis Uhrík](https://linktr.ee/denisuhrik)** &amp; **Samuel Hoskovec**
 
 ---
+
+</div>
 
 ### Navigation
 
@@ -14,12 +31,12 @@ Made by **[Denis Uhrík](mailto:uhrikdenis@gmail.com)** &amp; **Samuel Hoskovec*
 - [2. Úlohy](#ulohy)
   - [2.1 Systém prihlasovania na DP a BP](#systém-prihlasovania-na-dp-a-bp)
   - [2.2 Vlastnosti modulov](#vlastnosti-modulov)
-    - [2.2.1 Formulár pre zadávanie tém DP/BP, ktorá obsahuje nasledujúce položky](#formulár-pre-zadávanie-tém-dpbp-ktorá-obsahuje-nasledujúce-položky)
+    - [2.2.1 Formulár pre zadávanie tém DP/BP](#formulár-pre-zadávanie-tém-dpbp-ktorá-obsahuje-nasledujúce-položky)
     - [2.2.2 Formulár pre editovanie tém DP/BP](#formulár-pre-editovanie-tém-dpbp)
-    - [2.2.3 Formátovaný výpis všetkých tém DP/BP (triedených podľa akademického roka a potom podľa vedúceho DP/BP), ktorá obsahuje nasledujúce položky:](#formátovaný-výpis-všetkých-tém-dpbp-triedených-podľa-akademického-roka-a-potom-podľa-vedúceho-dpbp-ktorá-obsahuje-nasledujúce-položky)
-    - [2.2.4 Formulár pre prihlásenie na DP/BP, ktorá obsahuje nasledujúce položky](#formulár-pre-prihlásenie-na-dpbp-ktorá-obsahuje-nasledujúce-položky)
-    - [2.2.5 V úvode formulára by mali byť informácie o DP/BP](#v-úvode-formulára-by-mali-byť-informácie-o-dpbp)
-    - [2.2.6 Po vyplnení a odoslaní obsahu formulára sa:](#po-vyplnení-a-odoslaní-obsahu-formulára-sa)
+    - [2.2.3 Formátovaný výpis všetkých tém DP/BP](#formátovaný-výpis-všetkých-tém-dpbp-triedených-podľa-akademického-roka-a-potom-podľa-vedúceho-dpbp-ktorá-obsahuje-nasledujúce-položky)
+    - [2.2.4 Formulár pre prihlásenie na DP/BP](#formulár-pre-prihlásenie-na-dpbp-ktorá-obsahuje-nasledujúce-položky)
+    - [2.2.5 Informácie o DP/BP v úvode](#v-úvode-formulára-by-mali-byť-informácie-o-dpbp)
+    - [2.2.6 Vyplnenie a odoslanie formularu](#po-vyplnení-a-odoslaní-obsahu-formulára-sa)
 
 ---
 
