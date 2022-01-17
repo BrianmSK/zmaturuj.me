@@ -42,6 +42,8 @@ Made by **[Denis Uhrík](https://linktr.ee/denisuhrik)** &amp; **Samuel Hoskovec
 
 ## Repository setup
 
+**Don't forget to rename config.php.sample to config.php and fill-in the variables❗**
+
 ```
 git clone https://github.com/BrianMSK/zmaturuj.me.git
 ```
@@ -50,7 +52,7 @@ git clone https://github.com/BrianMSK/zmaturuj.me.git
 
 #### Composer setup
 
-**Beaware: ❗Composer must be installed on your machine❗**
+**Beaware: Composer must be installed on your machine❗**
 
 ```
 composer install
@@ -61,17 +63,17 @@ composer update && composer upgrade
 
 #### GitGuardian setup
 
-**Use only if you want to use pre-push by GitGuardian**
+**Use only if you want to use pre-push by GitGuardian❗**
 
 **Beaware:**
 
-- **❗Don't forget there has to be .env file with API to GitGuardian❗**
+- **Don't forget there has to be .env file with API to GitGuardian❗**
 
 ```
 GITGUARDIAN_API_KEY=APIKEY
 ```
 
-- **❗Python 3.X must be installed on your machine❗**
+- **Python 3.X must be installed on your machine❗**
 
 ```
 pip install pre-commit
