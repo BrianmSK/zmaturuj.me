@@ -6,62 +6,94 @@ Made by **[Denis Uhrík](mailto:uhrikdenis@gmail.com)** &amp; **Samuel Hoskovec*
 
 ---
 
+### Navigation
+
+---
+
+##Repository setup
+Clone repository from GitHub
+
+```
+git clone https://github.com/BrianMSK/zmaturuj.me.git
+```
+
+---
+
+####Composer setup
+
+**Beaware: ❗Composer must be installed on your machine❗**
+
+```
+composer install
+composer update && composer upgrade
+```
+
+---
+
+####GitGuardian setup
+**Beaware: ❗Python 3.x must be installed on your machine❗**
+
+```
+pip install pre-commit
+pre-commit install --hook-type pre-push
+```
+
 ## Systém prihlasovania na DP a BP
 
-> [] Vytvorte systém umožňujúci prihlasovanie na DP (diplomové práce) a BP (bakalárske projekty) cez Internet. Systém by sa mal skladať z viacerých modulov.
+> - [ ] Vytvorte systém umožňujúci prihlasovanie na DP (diplomové práce) a BP (bakalárske projekty) cez Internet. Systém by sa mal skladať z viacerých modulov.
 
 ## Vlastnosti modulov:
 
 > ### Formulár pre zadávanie tém DP/BP, ktorá obsahuje nasledujúce položky:
 >
-> > [] názov DP/BP
+> > - [ ] názov DP/BP
 > >
-> > [] meno vedúceho DP/BP
+> > - [ ] meno vedúceho DP/BP
 > >
-> > [] zadanie DP/BP
+> > - [ ] zadanie DP/BP
 > >
-> > [] akademický rok
+> > - [ ] akademický rok
 > >
-> > [] meno/priezvisko/titul diplomanta/bakalára
+> > - [ ] meno/priezvisko/titul diplomanta/bakalára
 > >
-> > [] email diplomanta/bakalára
+> > - [ ] email diplomanta/bakalára
 >
 > ### Formulár pre editovanie tém DP/BP:
 >
-> > [] ktorá obsahuje rovnaké položky ako formulár pre zadávanie osôb
+> > - [ ] ktorá obsahuje rovnaké položky ako formulár pre zadávanie osôb
 > >
-> > [] pred editáciou musí prebehnúť overenie uživateľa na základe hesla
+> > - [ ] pred editáciou musí prebehnúť overenie uživateľa na základe hesla
 >
 > ### Formátovaný výpis všetkých tém DP/BP (triedených podľa akademického roka a potom podľa vedúceho DP/BP), ktorá obsahuje nasledujúce položky:
 >
-> > [] akademický rok
+> > - [ ] akademický rok
 > >
-> > [] názov DP/BP
+> > - [ ] názov DP/BP
 > >
-> > [] vedúci DP/BP
+> > - [ ] vedúci DP/BP
 > >
-> > [] obsadenie DP/BP (voľné/obsadené)
+> > - [ ] obsadenie DP/BP (voľné/obsadené)
 > >
-> > [] prihlásenie na DP/BP (ak je voľný)
+> > - [ ] prihlásenie na DP/BP (ak je voľný)
 >
 > ### Formulár pre prihlásenie na DP/BP, ktorá obsahuje nasledujúce položky:
 >
-> > [] meno/priezvisko/titul diplomanta/bakalára
+> > - [ ] meno/priezvisko/titul diplomanta/bakalára
 > >
-> > [] email diplomanta/bakalára
+> > - [ ] email diplomanta/bakalára
 > >
-> > [] komentár
+> > - [ ] komentár
 >
 > ### V úvode formulára by mali byť informácie o DP/BP:
 >
-> > [] názov DP/BP
+> > - [ ] názov DP/BP
 > >
-> > [] vedúci DP/BP
+> > - [ ] vedúci DP/BP
 > >
-> > [] zadanie DP/BP
+> > - [ ] zadanie DP/BP
 >
 > ### Po vyplnení a odoslaní obsahu formulára sa:
 >
-> > [] zadané údaje odoslať na emailovú adresu vedúceho DP/BP
+> > - [ ] zadané údaje odoslať na emailovú adresu vedúceho DP/BP
 > >
-> > [] ešte raz vypíše všetky položky
+> > - [ ] ešte raz vypíše všetky položky
