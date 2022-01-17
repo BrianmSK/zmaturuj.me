@@ -1,6 +1,7 @@
-repos:  - repo: https://github.com/BrianMSK/zmaturuj.me
-           rev: main
-           hooks:
-                - id: ggshield
-                language_version: python3
-                stages: [commit],[push]
+repos:
+  - repo: https://github.com/gitguardian/ggshield
+    rev: v1.10.7
+    hooks:
+      - id: ggshield-push
+        language_version: python3
+        stages: [push]
