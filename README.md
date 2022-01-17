@@ -61,7 +61,17 @@ composer update && composer upgrade
 
 #### GitGuardian setup
 
-**Beaware: ❗Python 3.x must be installed on your machine❗**
+**Use only if you want to use pre-push by GitGuardian**
+
+**Beaware:**
+
+- **❗Don't forget there has to be .env file with API to GitGuardian❗**
+
+```
+GITGUARDIAN_API_KEY=APIKEY
+```
+
+- **❗Python 3.X must be installed on your machine❗**
 
 ```
 pip install pre-commit
