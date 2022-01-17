@@ -10,7 +10,8 @@ Made by **[Denis Uhrík](mailto:uhrikdenis@gmail.com)** &amp; **Samuel Hoskovec*
 
 ---
 
-##Repository setup
+## Repository setup
+
 Clone repository from GitHub
 
 ```
@@ -19,7 +20,7 @@ git clone https://github.com/BrianMSK/zmaturuj.me.git
 
 ---
 
-####Composer setup
+#### Composer setup
 
 **Beaware: ❗Composer must be installed on your machine❗**
 
@@ -30,7 +31,8 @@ composer update && composer upgrade
 
 ---
 
-####GitGuardian setup
+#### GitGuardian setup
+
 **Beaware: ❗Python 3.x must be installed on your machine❗**
 
 ```
