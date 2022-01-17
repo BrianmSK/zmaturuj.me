@@ -17,7 +17,7 @@
   <main class="website-content">
     <?php $msg->display(); ?>
     <h1>Prihlásenie</h1>
-    <form action="login_form.php" method="POST">
+    <form action="/zmaturuj.me/views/backend/login_form.php" method="POST">
       <input type="text" placeholder="Zadajte vaše prihlasovacie meno" required class="nameInput">
 
       <input type="password" placeholder="Zadajte heslo" required class="passwordInput">
