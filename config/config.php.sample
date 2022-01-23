@@ -17,6 +17,7 @@ $emailpassword = "password"
 if (!session_id()) @session_start();
 
 $connection = new PDO("mysql:host=$host;port=$port;dbname=$dbname", "$username", "$password");
+$connection->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 
 //Load Composer's autoloader
 if (is_dir('../../vendor/')) {
