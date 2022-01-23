@@ -43,7 +43,7 @@ if (isset($_POST['submit'])) {
     if ($mail->send()) {
       $msg->success('User added', 'http://localhost/zmaturuj.me/', true);
     } else {
-      $msg->error('Message could not be sent. Mailer Error', 'http://localhost/zmaturuj.me/, true');
+      $msg->error('Message could not be sent. Mailer Error', 'http://localhost/zmaturuj.me/', true);
     }
   }
 } else {
