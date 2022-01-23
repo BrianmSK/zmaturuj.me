@@ -1,8 +1,12 @@
 <?php
 
 require_once("../config/config.php");
+require_once("../classes/is_logged.php");
 
-if ($path == "/") {
+if ($path == "/" && is_logged()) {
+  include_once("../views/frontend/welcome.php");
+  die();
+} else {
   include_once("../views/frontend/login.php");
   die();
 }
