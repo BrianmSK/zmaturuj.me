@@ -1,5 +1,4 @@
 <?php
-require_once '../config/config.php'; // INCLUDE CONFIG
 
 function is_admin(int $id)
 {

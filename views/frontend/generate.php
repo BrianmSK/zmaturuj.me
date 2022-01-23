@@ -1,6 +1,7 @@
 <?php
-
+require_once '../../config/config.php'; // INCLUDE CONFIG
 require_once '../../classes/is_admin.php'; // CHECK IF USER IS ADMIN
+
 if (is_admin($_SESSION['id'])) {
   die();
 } else {
