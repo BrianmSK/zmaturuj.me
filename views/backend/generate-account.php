@@ -6,7 +6,7 @@ if (isset($_POST['submit'])) {
   require_once '../../classes/authcode.php'; // PASSWORD GENERATOR
 
   //Recipients
-  $email = strtolower($_POST['email']);
+  $email = filter_var(strtolower($_POST['email']), FILTER_SANITIZE_EMAIL);
   $mail->addAddress($email);     //Add a recipient
 
   $password = authCode(); // GENERATE PASSWORD

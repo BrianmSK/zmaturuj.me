@@ -7,7 +7,7 @@ if (isset($_POST['submit'])) {
     header("Location: /zmaturuj.me/");
     die();
   } else {
-    $email = strtolower($_POST['email']);
+    $email = filter_var(strtolower($_POST['email']), FILTER_SANITIZE_EMAIL);
     $password = $_POST['password'];
     if (empty($email)) {
       $msg->error('Login error: email empty!', 'http://localhost/zmaturuj.me/', true);
