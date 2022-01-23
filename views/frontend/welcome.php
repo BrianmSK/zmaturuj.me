@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="sk-SK">
 
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,15 +16,10 @@
 <body>
   <main class="website-content">
     <?php $msg->display(); ?>
-    <h1>Prihlásenie</h1>
-    <form action="../zmaturuj.me/views/auth/login_form.php" method="post">
-      <input type="text" name="email" placeholder="Zadajte vaše prihlasovacie meno" required class="nameInput">
-
-      <input type="password" name="password" placeholder="Zadajte heslo" required class="passwordInput">
-
-      <button type="submit" name="submit" class="buttonInput">Prihlásenie</button>
-
-    </form>
+    <h1>Welcome</h1>
+    <h2>
+      <a href="/zmaturuj.me/?logout=true">Log out</a>
+    </h2>
   </main>
   <footer class="footer">
     <h2>Made with <3 by Denis and Samuel</h2>
