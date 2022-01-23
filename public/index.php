@@ -8,7 +8,7 @@ if ($path == "/") {
 }
 
 if ($path == "/generate") {
-  include_once("../views/frontend/generate.html");
+  include_once("../views/frontend/generate.php");
   die();
 }
 if ($path == "/error") {
