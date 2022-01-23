@@ -12,6 +12,6 @@ if ($path == "/generate") {
   die();
 }
 if ($path == "/error") {
-  include_once("../views/error/404.html");
+  include_once("../views/error/404.php");
   die();
 }
