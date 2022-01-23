@@ -1,9 +1,8 @@
 <?php
-require_once '../../config/config.php'; // INCLUDE CONFIG
-require_once '../../classes/is_admin.php'; // CHECK IF USER IS ADMIN
+require_once '../config/config.php'; // INCLUDE CONFIG
+include_once("../classes/is_admin.php"); // INCLUDE IS ADMIN FUNCTION
 
-if (is_admin($_SESSION['id'])) {
-  die();
+if (is_admin($connection, $_SESSION['id'])) {
 } else {
   header("Location: /zmaturuj.me/error");
 }
@@ -19,6 +18,8 @@ if (is_admin($_SESSION['id'])) {
 </head>
 
 <body>
+  <h1>Welcome admin</h1>
+  <h2>Here you can generate accounts!</h2>
   <form action="../zmaturuj.me/views/backend/generate-account.php" method="post">
     <input type="email" name="email" placeholder="Write e-mail">
     <input type="submit" name="submit" value="Generate"></input>

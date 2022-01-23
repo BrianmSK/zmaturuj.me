@@ -1,8 +1,8 @@
 <?php
-
-function is_admin(int $id)
+require_once '../config/config.php'; // INCLUDE CONFIG
+function is_admin(PDO $connection, $id)
 {
-  if (isset($id, $email)) {
+  if (isset($id)) {
     $isAdminCheck = $connection->prepare("
       SELECT is_admin
       FROM users
@@ -11,7 +11,7 @@ function is_admin(int $id)
     $isAdminCheck->bindParam(":id", $id);
     $isAdminCheck->execute();
     $isAdmin = $isAdminCheck->fetch(PDO::FETCH_ASSOC);
-    if ($isAdmin) {
+    if ($isAdmin['is_admin']) {
       return true;
     } else {
       return false;
