@@ -19,9 +19,15 @@ Maturitná práca - SSOŠ Pro scholaris - 4.AC
 
 Made by **[Denis Uhrík](https://linktr.ee/denisuhrik)** &amp; **Samuel Hoskovec**
 
+</div>
+
 ---
 
-</div>
+### WIP Feature
+
+- [] Reset password on first login
+
+---
 
 ## Navigation
 
@@ -47,10 +53,6 @@ Made by **[Denis Uhrík](https://linktr.ee/denisuhrik)** &amp; **Samuel Hoskovec
 ```
 git clone https://github.com/BrianMSK/zmaturuj.me.git
 ```
-
-### WIP Feature
-
-- [] Reset password on first login
 
 ---
 
