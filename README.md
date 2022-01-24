@@ -48,6 +48,10 @@ Made by **[Denis Uhrík](https://linktr.ee/denisuhrik)** &amp; **Samuel Hoskovec
 git clone https://github.com/BrianMSK/zmaturuj.me.git
 ```
 
+### WIP Feature
+
+- [] Reset password on first login
+
 ---
 
 ### Composer setup
