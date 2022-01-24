@@ -7,7 +7,7 @@ if (isset($_POST['submit'])) { // CHECKS IF WE GET SUBMITTED FROM POST
 
   //Recipients
   $email = filter_var(strtolower($_POST['email']), FILTER_SANITIZE_EMAIL); // LOWER AND SANITIZE MAIL INPUT
-  $mail->addAddress("uhrikdenis@gmail.com");     //Add a recipient
+  $mail->addAddress($email);     //Add a recipient
 
   $password = authCode(); // GENERATE PASSWORD
   $hashed_password = password_hash($password, PASSWORD_DEFAULT); // HASH PASSWORD USING PHP IN-BUILT FUNCTION
