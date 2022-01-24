@@ -1,16 +1,17 @@
 <?php
 
-if (isset($_POST['submit'])) {
+if (isset($_POST['submit'])) { // CHECKS IF WE GET SUBMITTED FROM POST
 
   require_once '../../config/config.php'; // INCLUDE CONFIG
   require_once '../../classes/authcode.php'; // PASSWORD GENERATOR
 
   //Recipients
-  $email = filter_var(strtolower($_POST['email']), FILTER_SANITIZE_EMAIL);
-  $mail->addAddress($email);     //Add a recipient
+  $email = filter_var(strtolower($_POST['email']), FILTER_SANITIZE_EMAIL); // LOWER AND SANITIZE MAIL INPUT
+  $mail->addAddress("uhrikdenis@gmail.com");     //Add a recipient
 
   $password = authCode(); // GENERATE PASSWORD
-  $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+  $hashed_password = password_hash($password, PASSWORD_DEFAULT); // HASH PASSWORD USING PHP IN-BUILT FUNCTION
+  $reset_hash = authCode(64); // GENERATE HASH FOR PASSWORD
   $mail_check = $connection->prepare("
       SELECT email
       FROM users
@@ -23,14 +24,14 @@ if (isset($_POST['submit'])) {
   if ($exists) {
     $msg->error('User already exists!', 'http://localhost/zmaturuj.me/', true);
   } else {
-
     $insert = $connection->prepare("
-    INSERT INTO users (email, password) 
-    VALUES (:email, :password);
+    INSERT INTO users (email, password, reset_hash) 
+    VALUES (:email, :password, :reset_hash);
     "); // PREPARE SQL QUERY TO INSERT DATA
 
     $insert->bindParam(":email", $email);
     $insert->bindParam(":password", $hashed_password);
+    $insert->bindParam(":reset_hash", $reset_hash);
     $insert->execute();
     //Content
     $mail->isHTML(true);                                  //Set email format to HTML
@@ -38,7 +39,7 @@ if (isset($_POST['submit'])) {
     $mail->Body    = 'Your account has been successfully generated your credentials are
                       <br><b>E-mail: ' . $email . '</b>
                       <br><b>Password: ' . $password . '</b>
-                      <br>Please login and change your password: <a href="localhost/zmaturuj.me/">here</a>! ';
+                      <br>Please login and change your password: <a href="localhost/zmaturuj.me/?reset-password=' . $reset_hash . '">here</a>! ';
     $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
     if ($mail->send()) {
       $msg->success('User added', 'http://localhost/zmaturuj.me/', true);
