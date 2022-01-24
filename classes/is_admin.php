@@ -11,7 +11,7 @@ function is_admin(PDO $connection, $id)
     $isAdminCheck->bindParam(":id", $id);
     $isAdminCheck->execute();
     $isAdmin = $isAdminCheck->fetch(PDO::FETCH_ASSOC);
-    if ($isAdmin['is_admin']) {
+    if ($isAdmin['is_admin'] == true) {
       return true;
     } else {
       return false;
