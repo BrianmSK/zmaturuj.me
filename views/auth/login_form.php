@@ -10,10 +10,10 @@ if (isset($_POST['submit'])) {
     $email = filter_var(strtolower($_POST['email']), FILTER_SANITIZE_EMAIL);
     $password = $_POST['password'];
     if (empty($email)) {
-      $msg->error('Login error: email empty!', 'http://localhost/zmaturuj.me/', true);
+      $msg->error('Login error: email empty!', "$url", true);
       die();
     } elseif (empty($password)) {
-      $msg->error('Login error: password empty!', 'http://localhost/zmaturuj.me/', true);
+      $msg->error('Login error: password empty!', "$url", true);
       die();
     } else {
       $login_check = $connection->prepare("
@@ -25,15 +25,15 @@ if (isset($_POST['submit'])) {
       $login_check->execute();
       $login = $login_check->fetch(PDO::FETCH_ASSOC);
       if (!$login) {
-        $msg->error('Login error: wrong username or password!', 'http://localhost/zmaturuj.me/', true);
+        $msg->error('Login error: wrong username or password!', "$url", true);
       } else {
         if ($email == $login['email'] && password_verify($password, $login['password'])) {
           session_start();
           $_SESSION['id'] = $login['id'];
           $_SESSION['email'] = $login['email'];
-          $msg->success('Login successful!', 'http://localhost/zmaturuj.me/', true);
+          $msg->success('Login successful!', "$url", true);
         } else {
-          $msg->error('Login error: wrong username or password!', 'http://localhost/zmaturuj.me/', true);
+          $msg->error('Login error: wrong username or password!', "$url", true);
         }
       }
     }

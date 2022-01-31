@@ -1,19 +1,23 @@
 <?php
-include_once "../config/config.php";
 
-$title = "Zmaturuj.me | Welcome";
+if (is_logged()) {
 
-include_once "parts/header.php";
+  $title = "Zmaturuj.me | Welcome";
+
+  include_once "parts/header.php";
 
 ?>
-<main class="website-content">
-  <?= $msg->display(); ?>
-  <h1>Welcome</h1>
-  <h2>
-    <a href="/zmaturuj.me/?logout=true">Log out</a>
-  </h2>
-</main>
+  <main class="website-content">
+    <?= $msg->display(); ?>
+    <h1>Welcome</h1>
+    <h2>
+      <a href="/zmaturuj.me/?logout=true">Log out</a>
+    </h2>
+  </main>
 
 <?php
-include_once "parts/footer.php";
+  include_once "parts/footer.php";
+} else {
+  header("Location: $url");
+}
 ?>

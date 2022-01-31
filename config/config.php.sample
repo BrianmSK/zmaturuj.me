@@ -49,3 +49,5 @@ $msg = new \Plasticbrain\FlashMessages\FlashMessages();
 $path = explode("/zmaturuj.me", $_SERVER['REQUEST_URI']);
 $path = array_splice($path, 1);
 $path = implode("", $path);
+
+$url = "/zmaturuj.me";

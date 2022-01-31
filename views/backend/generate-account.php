@@ -1,9 +1,10 @@
 <?php
 
-if (isset($_POST['submit'])) { // CHECKS IF WE GET SUBMITTED FROM POST
+include_once '../config/config.php'; // INCLUDE CONFIG
 
-  require_once '../../config/config.php'; // INCLUDE CONFIG
-  require_once '../../classes/authcode.php'; // PASSWORD GENERATOR
+if (isset($_POST['submit']) && is_admin($connection, $_SESSION['id'])) { // CHECKS IF WE GET SUBMITTED FROM POST
+
+  require_once '../classes/authcode.php'; // PASSWORD GENERATOR
 
   //Recipients
   $email = filter_var(strtolower($_POST['email']), FILTER_SANITIZE_EMAIL); // LOWER AND SANITIZE MAIL INPUT
@@ -22,7 +23,7 @@ if (isset($_POST['submit'])) { // CHECKS IF WE GET SUBMITTED FROM POST
   $mail_check->execute();
   $exists = $mail_check->fetch(PDO::FETCH_ASSOC);
   if ($exists) {
-    $msg->error('User already exists!', 'http://localhost/zmaturuj.me/', true);
+    $msg->error('User already exists!', "$url", true);
   } else {
     $insert = $connection->prepare("
     INSERT INTO users (email, password, reset_hash) 
@@ -42,9 +43,9 @@ if (isset($_POST['submit'])) { // CHECKS IF WE GET SUBMITTED FROM POST
                       <br>Please login and change your password: <a href="localhost/zmaturuj.me/?reset-password=' . $reset_hash . '">here</a>!';
     $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
     if ($mail->send()) {
-      $msg->success('User added', 'http://localhost/zmaturuj.me/', true);
+      $msg->success('User added', "$url", true);
     } else {
-      $msg->error('Message could not be sent. Mailer Error', 'http://localhost/zmaturuj.me/', true);
+      $msg->error('Message could not be sent. Mailer Error', "$url", true);
     }
   }
 } else {

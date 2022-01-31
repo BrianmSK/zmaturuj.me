@@ -48,8 +48,22 @@ CHECK IF USER WANTS TO LOGOUT
 /*
 CHECK IF USER WANTS TO GENERATE ACCOUNT AND IS LOGGED AND IS ADMIN
 */
-if ($path == "/generate" && is_logged() && is_admin($connection, $_SESSION['id'])) {
+if ($path == "/generate") {
   include_once("../views/frontend/generate.php");
+  die();
+}
+
+/* ROUTING OF FILES HERE */
+if ($path == "/login") {
+  include_once("../views/auth/login_form.php");
+  die();
+}
+if ($path == "/generate-account") {
+  include_once("../views/backend/generate-account.php");
+  die();
+}
+if ($path == "/reset-password") {
+  include_once("../views/auth/reset_password.php");
   die();
 }
 
