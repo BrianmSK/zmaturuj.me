@@ -25,7 +25,7 @@ Made by **[Denis Uhrík](https://linktr.ee/denisuhrik)** &amp; **Samuel Hoskovec
 
 ### WIP Feature
 
-- [] Reset password on first login
+- [ ] Profile with possibility of editing
 
 ---
 
