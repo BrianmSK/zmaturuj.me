@@ -1,7 +1,7 @@
 <?php
 include_once("../../config/config.php"); // INCLUDE CONFIG
 
-if (isset($_POST['submit']) || isset($_GET['reset-password']) || isReset($connection, $_SESSION['id'])) {
+if (isset($_POST['submit']) && (isset($_GET['reset-password']) || isReset($connection, $_SESSION['id']))) {
   if ($_POST['password'] != $_POST['password-verify']) {
     $msg->error('Password does not match! Enter again', "$url?reset-password=$reset_hash", true);
   } else {
