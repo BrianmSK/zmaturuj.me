@@ -39,7 +39,7 @@ if (isset($_POST['submit'])) { // CHECKS IF WE GET SUBMITTED FROM POST
     $mail->Body    = 'Your account has been successfully generated your credentials are
                       <br><b>E-mail: ' . $email . '</b>
                       <br><b>Password: ' . $password . '</b>
-                      <br>Please login and change your password: <a href="localhost/zmaturuj.me/?reset-password=' . $reset_hash . '">here</a>! ';
+                      <br>Please login and change your password: <a href="localhost/zmaturuj.me/?reset-password=' . $reset_hash . '">here</a>!';
     $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
     if ($mail->send()) {
       $msg->success('User added', 'http://localhost/zmaturuj.me/', true);

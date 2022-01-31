@@ -11,24 +11,28 @@ CHECK IF USER IS LOGGED
 if ($path == "/" && is_logged() && isReset($connection, $_SESSION['id'])) {
   include_once("../views/frontend/reset.php");
   die();
+
   /*
 CHECK IF USER IS GOING TO RESET PASSWORD VIA LINK
 */
 } elseif (strpos($_SERVER['REQUEST_URI'], "?") && !is_logged() && isset($_GET['reset-password'])) {
   include_once("../views/frontend/reset.php");
   die();
+
   /*
 CHECK IF LOGGED AND RESET?
 */
 } elseif ($path == "/" && is_logged()) {
   include_once("../views/frontend/welcome.php");
   die();
+
   /*
 CHECK IF LOGGED
 */
 } elseif ($path == "/" && !is_logged()) {
   include_once("../views/frontend/login.php");
   die();
+
   /*
 CHECK IF USER WANTS TO LOGOUT
 */
@@ -47,7 +51,11 @@ CHECK IF USER WANTS TO GENERATE ACCOUNT AND IS LOGGED AND IS ADMIN
 if ($path == "/generate" && is_logged() && is_admin($connection, $_SESSION['id'])) {
   include_once("../views/frontend/generate.php");
   die();
-} elseif ($path == "/error") {
+}
+
+
+/* CHECK IF PATH EQUALS ERROR OR IS NOT KNOWN */
+if ($path == "/error") {
   include_once("../views/error/404.php");
   die();
 } else {
