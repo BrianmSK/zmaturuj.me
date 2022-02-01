@@ -2,11 +2,16 @@
 include_once("../../config/config.php"); // INCLUDE CONFIG
 
 if (isset($_POST['submit'])) {
-  if ($_POST['password'] != $_POST['password-verify']) {
-    $msg->error('Password does not match! Enter again', "http://localhost/zmaturuj.me/?reset-password=$reset_hash", true);
+  $password = $_POST['password'];
+  $password_verify = $_POST['password-verify'];
+  $reset_hash = $_POST['hash'];
+  if ($password != $password_verify) {
+    if (!empty($reset_hash)) {
+      $msg->error('Password does not match! Enter again', "http://localhost/zmaturuj.me/?reset-password=$reset_hash", true);
+    } else {
+      $msg->error('Password does not match! Enter again', "http://localhost/zmaturuj.me/", true);
+    }
   } else {
-    $password = $_POST['password'];
-    $reset_hash = $_POST['hash'];
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
     if (isset($_SESSION['id'])) {
       $password_change = $connection->prepare("
