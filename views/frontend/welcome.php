@@ -1,9 +1,12 @@
 <?php
 
+// CHECK IF USER IS LOGGED
 if (is_logged()) {
 
+  // SETS TITLE FOR HEADER
   $title = "Zmaturuj.me | Welcome";
 
+  // INCLUDE HEADER
   include_once "parts/header.php";
 
 ?>
@@ -16,7 +19,11 @@ if (is_logged()) {
   </main>
 
 <?php
+
+  // INCLUDE FOOTER
   include_once "parts/footer.php";
+
+  // OTHERWISE REDIRECT TO HOMEPAGE
 } else {
   header("Location: $url");
 }

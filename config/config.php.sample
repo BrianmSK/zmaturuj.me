@@ -1,21 +1,22 @@
 <?php
 
 //DB Variables
-$host = "localhost";
-$port = "3365";
-$dbname = "database";
-$username = "username";
-$password = "password";
+$host = "";
+$port = "";
+$dbname = "";
+$username = "";
+$password = "";
 
 //Mail Variables
-$smtphost = "localhost"
-$emailport = "995"
-$emailusername = "username"
-$emailpassword = "password"
+$smtphost = "";
+$emailport = "";
+$emailusername = "";
+$emailpassword = "";
 
 // Start a Session
 if (!session_id()) @session_start();
 
+// STARTS A CONNECTION
 $connection = new PDO("mysql:host=$host;port=$port;dbname=$dbname", "$username", "$password");
 $connection->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
 
@@ -26,6 +27,7 @@ if (is_dir('../../vendor/')) {
   require '../vendor/autoload.php';
 }
 
+// DEFINES MAILER CLASS
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 
@@ -46,8 +48,11 @@ $mail->setFrom('$emailusername', 'Zmaturuj.me');
 // Instantiate the class
 $msg = new \Plasticbrain\FlashMessages\FlashMessages();
 
+// THIS IS OUR OWN ROUTER, ROUTER CLASS 
+// DIDNT WORK SO I HAD TO DO THIS SIMPLE ROUTING VARIABLE
 $path = explode("/zmaturuj.me", $_SERVER['REQUEST_URI']);
 $path = array_splice($path, 1);
 $path = implode("", $path);
 
+// THIS IS PREDEFINED URL OF THE WEBSITE, IF YOU HAVE WEBSITE ON ROOT, USE SLASH
 $url = "/zmaturuj.me";
