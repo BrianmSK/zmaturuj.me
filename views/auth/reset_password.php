@@ -1,15 +1,15 @@
 <?php
 include_once("../../config/config.php"); // INCLUDE CONFIG
 
-if (isset($_POST['submit'])) {
+if (isset($_POST['submit']) && (isset($_GET['reset-password']) || isReset($connection, $_SESSION['id']))) {
   $password = $_POST['password'];
   $password_verify = $_POST['password-verify'];
   $reset_hash = $_POST['hash'];
   if ($password != $password_verify) {
     if (!empty($reset_hash)) {
-      $msg->error('Password does not match! Enter again', "http://localhost/zmaturuj.me/?reset-password=$reset_hash", true);
+      $msg->error('Password does not match! Enter again', "$url?reset-password=$reset_hash", true);
     } else {
-      $msg->error('Password does not match! Enter again', "http://localhost/zmaturuj.me/", true);
+      $msg->error('Password does not match! Enter again', "$url", true);
     }
   } else {
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
@@ -23,7 +23,7 @@ if (isset($_POST['submit'])) {
       $password_change->bindParam(':id', $_SESSION['id']);
       $password_change->execute();
       session_destroy();
-      $msg->success('Password resetted via id!', 'http://localhost/zmaturuj.me/', true);
+      $msg->success('Password resetted via id!', "$url", true);
     } else {
       $password_change = $connection->prepare("
       UPDATE users
@@ -34,7 +34,7 @@ if (isset($_POST['submit'])) {
       $password_change->bindParam(':reset', $reset_hash);
       $password_change->execute();
       session_destroy();
-      $msg->success('Password resetted via hash ver!', 'http://localhost/zmaturuj.me/', true);
+      $msg->success('Password resetted via hash ver!', "$url", true);
     }
   }
 }
