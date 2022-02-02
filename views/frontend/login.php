@@ -1,7 +1,9 @@
 <?php
 
+// INCLUDE TITLE FOR HEADER
 $title = "Zmaturuj.me | Login page";
 
+// INCLUDE HEADER
 include_once "parts/header.php"; ?>
 
 <main class="website-content">
@@ -17,4 +19,7 @@ include_once "parts/header.php"; ?>
   </form>
 </main>
 
-<?php include_once "parts/footer.php"; ?>
+<?php
+// INCLUDE FOOTER
+include_once "parts/footer.php";
+?>
