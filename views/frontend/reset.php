@@ -35,9 +35,9 @@ if (isReset($connection, $_SESSION['id']) || isset($_GET['reset-password'])) {
     <h1>Please enter new password!</h1>
     <form action="/zmaturuj.me/reset-password" method="post">
 
-      <input type="password" name="password" placeholder="Zadajte heslo" required class="passwordInput">
+      <input type="password" name="password" placeholder="Zadajte heslo" required class="input">
 
-      <input type="password" name="password-verify" placeholder="Zopakujte heslo" required class="passwordInput">
+      <input type="password" name="password-verify" placeholder="Zopakujte heslo" required class="input">
       <input type="hidden" name="hash" value="<?php print($reset_hash_result['reset_hash']); ?>">
       <button type="submit" name="submit" class="buttonInput">Change</button>
 
