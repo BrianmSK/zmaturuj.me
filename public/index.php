@@ -4,6 +4,7 @@ require_once("../config/config.php");
 require_once("../classes/is_logged.php");
 require_once("../classes/is_admin.php");
 require_once("../classes/is_reset.php");
+require_once("../classes/exists.php");
 
 /*
 CHECK IF USER IS LOGGED
@@ -24,6 +25,13 @@ CHECK IF LOGGED AND RESET?
 */
 } elseif ($path == "/" && is_logged()) {
   include_once("../views/frontend/welcome.php");
+  die();
+
+  /*
+CHECK IF USER WANTS TO VISIT HIS PROFILE  
+*/
+} elseif ($path == "/profile" && is_logged()) {
+  include_once("../views/frontend/profile.php");
   die();
 
   /*
@@ -64,6 +72,10 @@ if ($path == "/generate-account") {
 }
 if ($path == "/reset-password") {
   include_once("../views/auth/reset_password.php");
+  die();
+}
+if ($path == "/edit-profile") {
+  include_once("../views/backend/edit-profile.php");
   die();
 }
 
