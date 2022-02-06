@@ -13,18 +13,17 @@ if (isset($_POST['submit'])) {
 
   $password_hash = password_hash($password, PASSWORD_DEFAULT);
 
-  // CHECK IS PASSWORD IS EMPTY, IF ITS NOT, UPDATE WITH PASSWORD
-  if (!empty($password)) {
+  // CHECK IF EMAIL EITHER EXISTS OR IS NOT OWNED BY USER
+  if (email_exists($connection, $email)) {
 
-    // IS PASSWORDS DOESNT EQUAL, RETURN WITH ERROR
-    if ($password != $confirm_password) {
-      $msg->error('Password does not match! Enter again', "$url/profile", true);
-      die();
-    }
+    // CHECK IS PASSWORD IS EMPTY, IF ITS NOT, UPDATE WITH PASSWORD
+    if (!empty($password)) {
 
-    // CHECK IF EMAIL EITHER EXISTS OR IS NOT OWNED BY USER
-    if (email_exists($connection, $email) == false) {
-
+      // IS PASSWORDS DOESNT EQUAL, RETURN WITH ERROR
+      if ($password != $confirm_password) {
+        $msg->error('Password does not match! Enter again', "$url/profile", true);
+        die();
+      }
       // PREPARE QUERY TO UPDATE WITH NEW PASSWORD
       $send_variables = $connection->prepare("
         UPDATE users
@@ -42,17 +41,8 @@ if (isset($_POST['submit'])) {
       $msg->success('Profile updated!', $url, true);
       die();
 
-      // OTHERWISE REDIRECT TO PROFILE WITH ERROR
+      // IF WE DONT HAVE PASSWORD SET WE USE QUERY WITHOUT MODIFYING PASSWORD IN DB
     } else {
-      $msg->error('Email already exists!', "$url/profile", true);
-      die();
-    }
-  }
-  // IF PASSWORD IS EMPTY UPDATE WITHOUT PASSWORD
-  else {
-
-    // CHECK IF EMAIL EITHER EXISTS OR IS NOT OWNED BY USER
-    if (email_exists($connection, $email) == false) {
 
       // PREPARE QUERY TO UPDATE WITHOUT PASSWORD
       $send_variables = $connection->prepare("
@@ -69,11 +59,12 @@ if (isset($_POST['submit'])) {
       // REDIRECT TO HOMEPAGE WITH SUCCESS
       $msg->success('Profile updated!', $url, true);
       die();
-
-      // OTHERWISE REDIRECT TO PROFILE WITH ERROR
-    } else {
-      $msg->error('Email already exists!', "$url/profile", true);
-      die();
     }
+  }
+
+  // IF EMAIL EXISTS RETURN BACK
+  else {
+    $msg->error('Email already exists!', "$url/profile", true);
+    die();
   }
 }
