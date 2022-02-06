@@ -16,8 +16,7 @@ if (isset($_POST['submit']) && is_admin($connection, $_SESSION['id'])) { // CHEC
   $mail_check = $connection->prepare("
       SELECT email
       FROM users
-      WHERE EXISTS 
-      (SELECT email from users WHERE email = :email)
+      WHERE email = :email
   ");
   $mail_check->bindParam(":email", $email);
   $mail_check->execute();
