@@ -1,5 +1,7 @@
 <?php
-
+/*
+REQUIRE ALL THE NECESSEARY CLASSES AND CONFIG ON THE INDEX WEBSITE
+*/
 require_once("../config/config.php");
 require_once("../classes/is_logged.php");
 require_once("../classes/is_admin.php");
@@ -7,7 +9,7 @@ require_once("../classes/is_reset.php");
 require_once("../classes/exists.php");
 
 /*
-CHECK IF USER IS LOGGED
+CHECK IF USER IS NEEDS TO RESET HIS PASSWORD AND IS LOGGED
 */
 if ($path == "/" && is_logged() && isReset($connection, $_SESSION['id'])) {
   include_once("../views/frontend/reset.php");
@@ -21,7 +23,7 @@ CHECK IF USER IS GOING TO RESET PASSWORD VIA LINK
   die();
 
   /*
-CHECK IF LOGGED AND RESET?
+CHECKS IF USER IS LOGGED
 */
 } elseif ($path == "/" && is_logged()) {
   include_once("../views/frontend/welcome.php");
@@ -35,7 +37,7 @@ CHECK IF USER WANTS TO VISIT HIS PROFILE
   die();
 
   /*
-CHECK IF LOGGED
+CHECKS IF USER IS NOT LOGGED
 */
 } elseif ($path == "/" && !is_logged()) {
   include_once("../views/frontend/login.php");
@@ -61,7 +63,7 @@ if ($path == "/generate") {
   die();
 }
 
-/* ROUTING OF FILES HERE */
+/* ROUTING OF FILES HERE TO FORM ACTIONS*/
 if ($path == "/login") {
   include_once("../views/auth/login_form.php");
   die();

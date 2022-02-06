@@ -1,9 +1,12 @@
 <?php
 
-
+// CHECK IF USER IS ADMIN
 if (is_admin($connection, $_SESSION['id'])) {
 
+  // SETS TITLE FOR HEADER
   $title = "Zmaturuj.me | Generate account";
+
+  // INCLUDES HEADER
   include_once "parts/header.php"; ?>
 
   <header>
@@ -23,7 +26,10 @@ if (is_admin($connection, $_SESSION['id'])) {
 
 <?php
 
+  //INCLUDE FOOTER
   include_once "parts/footer.php";
+
+  // OTHERWISE REDIRECT HIM BACK
 } else {
   header("Location: $url");
 }
