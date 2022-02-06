@@ -9,29 +9,29 @@ function email_exists(PDO $connection, $email)
 {
   // PREPARE QUERY TO SELECT EMAIL BY INPUT
   $param_check = $connection->prepare("
-      SELECT email
+      SELECT email, id
       FROM users
-      WHERE email = :email
+      WHERE email = :email OR id = :id
   ");
   $param_check->bindParam(":email", $email);
+  $param_check->bindParam(":id", $_SESSION['id']);
   $param_check->execute();
+  // FETCH RESULT FROM QUERY
   $param_check_result = $param_check->fetch(PDO::FETCH_ASSOC);
 
-  // PREPARE QUERY TO SELECT EMAIL BY ID
-  $is_owned = $connection->prepare("
-      SELECT email
-      FROM users
-      WHERE id = :id
-  ");
-  $is_owned->bindParam(":id", $_SESSION['id']);
-  $is_owned->execute();
-  $is_owned_result = $is_owned->fetch(PDO::FETCH_ASSOC);
+  // GET THE ROW COUNT TO VERIFY HOW MANY OUTPUTS WE HAVE 
+  $rows = $param_check->rowCount();
 
-  // IF RESULT IS NOT EMPTY AND ISNT EQUAL TO THE OWNERS MAIL, RESULT IS TRUE
-  // IF ITS EMPTY (EMAIL IS NOT IN DB) OR IT ISNT OWNERS EMAIL, RESULT IS FALSE
-  if (!empty($param_check_result) && ($is_owned_result['email'] != $param_check_result['email'])) {
+  // IF OUR SESSION ID MATCHES WITH ONE IN DB AND WE ONLY HAVE ONE ROW, WE CAN CHANGE EMAIL
+  # WE NEED TO CHECK ROW COUNT, BECAUSE IF USER INPUTS VALID EMAIL OF ANOTHER USER, WE GET MORE ROWS THAN 1
+  # WE CHECK FOR ID DUE TO PREVENTION AND IF USER IS REALLY THE OWNER OF THE EMAIL
+  if (($param_check_result['id'] == $_SESSION['id']) && $rows == 1) {
+
+    # RETURNS TRUE SO WE KNOW THAT USER CAN USE THIS EMAIL 
     return true;
   } else {
+
+    #OTHERWISE WE RETURN FALSE AND USER CANNOT USE THIS EMAIL
     return false;
   }
 }
