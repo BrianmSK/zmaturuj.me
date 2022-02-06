@@ -6,7 +6,7 @@ require_once("../config/config.php");
 require_once("../classes/is_logged.php");
 require_once("../classes/is_admin.php");
 require_once("../classes/is_reset.php");
-require_once("../classes/exists.php");
+require_once("../classes/email_exists.php");
 
 /*
 CHECK IF USER IS NEEDS TO RESET HIS PASSWORD AND IS LOGGED
