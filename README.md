@@ -23,12 +23,6 @@ Made by **[Denis Uhrík](https://linktr.ee/denisuhrik)** &amp; **Samuel Hoskovec
 
 ---
 
-### WIP Feature
-
-- [ ] Profile with possibility of editing
-
----
-
 ## Navigation
 
 - [1. Repository setup](#repository-setup)
@@ -87,6 +81,12 @@ pre-commit install --hook-type pre-push
 ---
 
 ## Úlohy
+
+### Work In Progress
+
+- [ ] [Form to submit Bachelors/Masters degree topic #5](https://github.com/BrianMSK/zmaturuj.me/issues/5)
+- [ ] [Form to edit Bachelors/Masters degree topic #6](https://github.com/BrianMSK/zmaturuj.me/issues/6)
+- [ ] [Output all the topics of Bachelors/Masters degree #7](https://github.com/BrianMSK/zmaturuj.me/issues/7)
 
 ### Systém prihlasovania na DP a BP
 
