@@ -18,6 +18,8 @@
 
 <body>
   <header>
+
+    <a href="<?= $url ?>/">Homepage</a>
     <a href="<?= $url ?>/profile">Profile</a>
     <?php if (is_admin($connection, $_SESSION['id'])) { ?>
       <a href="<?= $url ?>/generate">Generate account</a>

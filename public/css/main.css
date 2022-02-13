@@ -97,6 +97,12 @@ header {
 header a {
   margin-top: 1rem;
   margin-right: 1.5rem;
+  text-decoration: none;
+  color: white;
+}
+header a:active,
+header a:hover {
+  color: #8c00ff;
 }
 
 h1 {
