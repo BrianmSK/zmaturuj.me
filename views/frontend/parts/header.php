@@ -17,3 +17,11 @@
 </head>
 
 <body>
+  <header>
+    <a href="<?= $url ?>/profile">Profile</a>
+    <?php if (is_admin($connection, $_SESSION['id'])) { ?>
+      <a href="<?= $url ?>/generate">Generate account</a>
+      <a href="<?= $url ?>/manage">Manage users</a>
+    <?php } ?>
+    <a href="/zmaturuj.me/?logout=true">Log out</a>
+  </header>

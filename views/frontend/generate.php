@@ -9,9 +9,6 @@ if (is_admin($connection, $_SESSION['id'])) {
   // INCLUDES HEADER
   include_once "parts/header.php"; ?>
 
-  <header>
-    <a href="<?= $url ?>">Go back</a>
-  </header>
   <main class="website-content">
     <h1>Welcome admin</h1>
     <h2>Here you can generate accounts!</h2>
@@ -31,6 +28,6 @@ if (is_admin($connection, $_SESSION['id'])) {
 
   // OTHERWISE REDIRECT HIM BACK
 } else {
-  header("Location: $url");
+  header("Location: $url/error");
 }
 ?>

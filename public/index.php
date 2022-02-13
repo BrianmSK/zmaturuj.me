@@ -62,6 +62,11 @@ if ($path == "/generate") {
   include_once("../views/frontend/generate.php");
   die();
 }
+# CHECK IF USER WANTS TO MANAGE ACCOUNTS OF USERS
+if ($path == "/manage") {
+  include_once("../views/frontend/manage.php");
+  die();
+}
 
 /* ROUTING OF FILES HERE TO FORM ACTIONS*/
 if ($path == "/login") {
@@ -78,6 +83,10 @@ if ($path == "/reset-password") {
 }
 if ($path == "/edit-profile") {
   include_once("../views/backend/edit-profile.php");
+  die();
+}
+if ($path == "/manage-account") {
+  include_once("../views/backend/manage-account.php");
   die();
 }
 
