@@ -72,6 +72,6 @@ if (isReset($connection, $_SESSION['id']) || isset($_GET['reset-password'])) {
 
   // OTHERWISE WE REDIRECT BACK TO HOMEPAGE
 } else {
-  header("Location: $url");
+  header("Location: $url/error");
 }
 ?>

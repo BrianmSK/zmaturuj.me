@@ -16,9 +16,6 @@ if (is_logged()) {
   $profile_values->execute();
   $profile_values_result = $profile_values->fetch(PDO::FETCH_ASSOC);
 ?>
-  <header>
-    <a href="<?= $url ?>">Go back</a>
-  </header>
   <main class="website-content">
     <?= $msg->display(); ?>
     <form action="/zmaturuj.me/edit-profile" method="post">
@@ -34,6 +31,6 @@ if (is_logged()) {
 <?php
   include_once "parts/footer.php";
 } else {
-  header("Location: $url");
+  header("Location: $url/error");
 }
 ?>
