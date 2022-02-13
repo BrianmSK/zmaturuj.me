@@ -5,6 +5,7 @@ REQUIRE ALL THE NECESSEARY CLASSES AND CONFIG ON THE INDEX WEBSITE
 require_once("../config/config.php");
 require_once("../classes/is_logged.php");
 require_once("../classes/is_admin.php");
+require_once("../classes/is_teacher.php");
 require_once("../classes/is_reset.php");
 require_once("../classes/email_exists.php");
 
