@@ -84,7 +84,7 @@ pre-commit install --hook-type pre-push
 
 ### Work In Progress
 
-- [ ] [Form to submit Bachelors/Masters degree topic #5](https://github.com/BrianMSK/zmaturuj.me/issues/5)
+- [x] [Form to submit Bachelors/Masters degree topic #5](https://github.com/BrianMSK/zmaturuj.me/issues/5)
 - [ ] [Form to edit Bachelors/Masters degree topic #6](https://github.com/BrianMSK/zmaturuj.me/issues/6)
 - [ ] [Output all the topics of Bachelors/Masters degree #7](https://github.com/BrianMSK/zmaturuj.me/issues/7)
 

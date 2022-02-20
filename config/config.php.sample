@@ -36,13 +36,13 @@ $mail = new PHPMailer(true);
 //Server settings
 $mail->SMTPDebug = SMTP::DEBUG_OFF;                      //Enable verbose debug output
 $mail->isSMTP();                                            //Send using SMTP
-$mail->Host       = '$smtphost';                     //Set the SMTP server to send through
+$mail->Host       = $smtphost;                     //Set the SMTP server to send through
 $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-$mail->Username   = '$emailusername';                     //SMTP username
-$mail->Password   = '$emailpassword';                               //SMTP password
+$mail->Username   = $emailusername;                     //SMTP username
+$mail->Password   = $emailpassword;                               //SMTP password
 $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
 $mail->Port       = $emailport;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
-$mail->setFrom('$emailusername', 'Zmaturuj.me');
+$mail->setFrom($emailusername, 'Zmaturuj.me');
 
 
 // Instantiate the class
