@@ -50,7 +50,7 @@ CHECK IF USER WANTS TO LOGOUT
 } elseif (strpos($_SERVER['REQUEST_URI'], "?") && is_logged() && isset($_GET['logout'])) {
   if ($_GET['logout'] == true) {
     session_destroy();
-    header("Location: /zmaturuj.me/");
+    header("Location: $url/");
     die();
   }
   die();
@@ -66,6 +66,11 @@ if ($path == "/generate") {
 # CHECK IF USER WANTS TO MANAGE ACCOUNTS OF USERS
 if ($path == "/manage") {
   include_once("../views/frontend/manage.php");
+  die();
+}
+# CHECK IF USER WANTS TO GO TO TOPICS SECTION
+if ($path == "/topics") {
+  include_once("../views/frontend/topics.php");
   die();
 }
 
@@ -97,7 +102,7 @@ if ($path == "/error") {
   include_once("../views/error/404.php");
   die();
 } else {
-  header("Location: /zmaturuj.me/error");
+  header("Location: $url/error");
   include_once("../views/error/404.php");
   die();
 }
