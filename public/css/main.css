@@ -1,14 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap");
 
-:root {
-  --transition: 0.2;
-  --bg-one: hsl(280, 60%, 5%);
-  --bg-two: hsl(280, 90%, 15%);
-  --stop: 40;
-  --angle: 45;
-  --border-width: 5;
-  --padlock-size: 300;
-  --border-radius: 6;
+* {
+  font-family: "Roboto Mono", monospace;
+  color: white;
 }
 body {
   background-color: #303030;
@@ -20,13 +14,50 @@ body {
   align-items: center;
   align-content: center;
 }
-* {
-  font-family: "Roboto Mono", monospace;
+/*HEADER CSS*/
+header {
+  width: 100%;
+  height: 5vh;
+  min-height: 5%;
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+}
+header a {
+  margin-top: 1rem;
+  margin-right: 1.5rem;
+  text-decoration: none;
   color: white;
 }
+header a:active,
+header a:hover {
+  color: #8c00ff;
+}
+/*MAIN CSS (BODY) CSS*/
+main {
+  width: 100%;
+  height: 90vh;
+  min-height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+}
+*.flexRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+}
+/*FOOTER CSS*/
 footer {
   width: 100%;
   height: 5vh;
+  min-height: 5%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -36,21 +67,17 @@ footer h2 {
   font-size: 16px;
   text-shadow: 2px 2px black;
 }
-main {
-  width: 100%;
-  height: 90vh;
+form {
+  width: 30vw;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   align-content: center;
-  flex-direction: column;
   text-align: center;
 }
-form {
-  width: 30vw;
-}
-form input.input {
+form input.input,
+form textarea.input {
   box-sizing: border-box;
   margin: 0 0 0 0;
   margin-bottom: 1.5rem;
@@ -63,7 +90,13 @@ form input.input {
   width: 100%;
 }
 
-form button.buttonInput {
+input#addNameOfTopic,
+textarea#addContentOfTopic {
+  text-align: left;
+}
+
+form button.buttonInput,
+form input.buttonInput {
   width: 100%;
   background: #8c00ff;
   color: white;
@@ -86,23 +119,6 @@ main h1 {
 }
 main h2 {
   margin-bottom: 2rem;
-}
-header {
-  width: 100%;
-  height: 5vh;
-  display: flex;
-  flex-direction: row;
-  justify-content: right;
-}
-header a {
-  margin-top: 1rem;
-  margin-right: 1.5rem;
-  text-decoration: none;
-  color: white;
-}
-header a:active,
-header a:hover {
-  color: #8c00ff;
 }
 
 h1 {
