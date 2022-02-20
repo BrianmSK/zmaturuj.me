@@ -56,7 +56,7 @@ if (isset($_POST['submit']) && is_admin($connection, $_SESSION['id'])) {
     $mail->Body    = 'Your account has been successfully generated your credentials are
                       <br><b>E-mail: ' . $email . '</b>
                       <br><b>Password: ' . $password . '</b>
-                      <br>Please login and change your password: <a href="localhost/zmaturuj.me/?reset-password=' . $reset_hash . '">here</a>!';
+                      <br>Please login and change your password: <a href="' . $url . '/?reset-password=' . $reset_hash . '">here</a>!';
     $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
     // IF WE SEND THE EMAIL SUCCESSFULLY WE REDIRECT HIM BACK
@@ -70,5 +70,5 @@ if (isset($_POST['submit']) && is_admin($connection, $_SESSION['id'])) {
   }
   // IF USER DOES NOT COME FROM FORM, WE REDIRECT TO ERROR PAGE
 } else {
-  header("Location: /zmaturuj.me/error");
+  header("Location: $url/error");
 }

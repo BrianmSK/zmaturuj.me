@@ -13,7 +13,7 @@ if (isset($_POST['submit'])) {
   // THIS IS JUST INCASE SOMETHING OCCURS ON ROUTING OR USERS WANTS TO LOGIN AGAIN
   if (is_logged()) {
 
-    header("Location: /zmaturuj.me/");
+    header("Location: $url/");
     die();
   } else {
 
@@ -78,6 +78,6 @@ if (isset($_POST['submit'])) {
   }
   // IF USER DID NOT COME FROM FORM, GIVE HIM ERROR MESSAGE
 } else {
-  header("Location: /zmaturuj.me/error");
+  header("Location: $url/error");
   die();
 }

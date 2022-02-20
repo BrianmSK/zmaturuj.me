@@ -55,7 +55,7 @@ if (isReset($connection, $_SESSION['id']) || isset($_GET['reset-password'])) {
   <main class="website-content">
     <?= $msg->display(); ?>
     <h1>Please enter new password!</h1>
-    <form action="/zmaturuj.me/reset-password" method="post">
+    <form action="<?= $url ?>/reset-password" method="post">
 
       <input type="password" name="password" placeholder="Zadajte heslo" required class="input">
 

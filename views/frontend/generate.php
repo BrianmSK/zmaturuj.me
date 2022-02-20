@@ -12,7 +12,7 @@ if (is_admin($connection, $_SESSION['id'])) {
   <main class="website-content">
     <h1>Welcome admin</h1>
     <h2>Here you can generate accounts!</h2>
-    <form action="/zmaturuj.me/generate-account" method="post">
+    <form action="<?= $url ?>/generate-account" method="post">
 
       <input type="email" required name="email" placeholder="Enter valid e-mail" class="input">
 

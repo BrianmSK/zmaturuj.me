@@ -18,7 +18,7 @@ if (is_logged()) {
 ?>
   <main class="website-content">
     <?= $msg->display(); ?>
-    <form action="/zmaturuj.me/edit-profile" method="post">
+    <form action="<?= $url ?>/edit-profile" method="post">
       <input type="text" required name="firstname" placeholder="Meno" class="input" value="<?= $profile_values_result['firstname'] ?>">
       <input type="text" required name="lastname" placeholder="Priezvisko" class="input" value="<?= $profile_values_result['lastname'] ?>">
       <input type="email" required name="email" placeholder="E-mail" class="input" value="<?= $profile_values_result['email'] ?>">

@@ -12,7 +12,7 @@ if (is_admin($connection, $_SESSION['id'])) {
   <main class="website-content">
     <?= $msg->display(); ?>
     <h2>Here you can manage accounts!</h2>
-    <form action="/zmaturuj.me/manage-account" method="post">
+    <form action="<?= $url ?>/manage-account" method="post">
       <select name="users">
         <?php
 

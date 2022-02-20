@@ -9,7 +9,7 @@ include_once "parts/header.php"; ?>
 <main class="website-content">
   <?php $msg->display(); ?>
   <h1>Prihlásenie</h1>
-  <form action="/zmaturuj.me/login" method="post">
+  <form action="<?= $url ?>/login" method="post">
     <input type="text" name="email" placeholder="Zadajte vaše prihlasovacie meno" required class="input">
 
     <input type="password" name="password" placeholder="Zadajte heslo" required class="input">
