@@ -95,6 +95,10 @@ if ($path == "/manage-account") {
   include_once("../views/backend/manage-account.php");
   die();
 }
+if ($path == "/add-topic") {
+  include_once("../views/backend/add-topic.php");
+  die();
+}
 
 
 /* CHECK IF PATH EQUALS ERROR OR IS NOT KNOWN */
