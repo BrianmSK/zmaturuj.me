@@ -14,11 +14,17 @@ if (is_teacher($connection, $_SESSION['id']) || is_admin($connection, $_SESSION[
 
   <main class="website-content">
     <?= $msg->display(); ?>
-    <div class="flexRow">
+    <div class="flexRow flexCenter">
       <form action="<?= $url ?>/add-topic" method="post">
         <h2>Add degree topic</h2>
         <input type="text" name="examName" placeholder="Name of exam" class="input" id="addNameOfTopic">
         <textarea name="examContent" class="input" placeholder="Enter content of exam" id="addContentOfTopic"></textarea>
+        <div class="flexRow marginBottom1">
+          <input type="radio" name="degree" id="bachelor" value="Bachelor">
+          <label for="bachelor" id="bachelorLabel">Bachelor</label>
+          <input type="radio" name="degree" id="masters" value="Masters">
+          <label for="masters" id="mastersLabel">Masters</label>
+        </div>
         <button type="submit" name="submit" class="buttonInput">Odoslať</button>
       </form>
       <form action="<?= $url ?>/edit-topic" method="post">
