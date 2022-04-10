@@ -64,8 +64,8 @@ if ($path == "/generate") {
   die();
 }
 # CHECK IF USER WANTS TO MANAGE ACCOUNTS OF USERS
-if ($path == "/manage") {
-  include_once("../views/frontend/manage.php");
+if ($path == "/manage-users") {
+  include_once("../views/frontend/manage_users.php");
   die();
 }
 # CHECK IF USER WANTS TO GO TO TOPICS SECTION
@@ -97,6 +97,10 @@ if ($path == "/manage-account") {
 }
 if ($path == "/add-topic") {
   include_once("../views/backend/add-topic.php");
+  die();
+}
+if ($path == "/edit-topic") {
+  include_once("../views/backend/edit-topic.php");
   die();
 }
 
