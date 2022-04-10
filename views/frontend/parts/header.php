@@ -23,7 +23,7 @@
     <a href="<?= $url ?>/profile">Profile</a>
     <?php if (is_admin($connection, $_SESSION['id'])) { ?>
       <a href="<?= $url ?>/generate">Generate account</a>
-      <a href="<?= $url ?>/manage">Manage users</a>
+      <a href="<?= $url ?>/manage-users">Manage users</a>
     <?php }
     if (is_teacher($connection, $_SESSION['id']) || is_admin($connection, $_SESSION['id'])) { ?>
       <a href="<?= $url ?>/topics">Manage topics</a>
