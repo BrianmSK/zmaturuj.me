@@ -13,7 +13,7 @@ if (is_admin($connection, $_SESSION['id'])) {
     <?= $msg->display(); ?>
     <h2>Here you can manage accounts!</h2>
     <form action="<?= $url ?>/manage-account" method="post">
-      <select name="users">
+      <select name="users flexRow">
         <?php
 
         $users = $connection->prepare("
@@ -29,10 +29,13 @@ if (is_admin($connection, $_SESSION['id'])) {
         }
         ?>
       </select>
-      <input type="checkbox" name="isTeacher" id="isTeacher">
-      <label for="isTeacher">Teacher</label>
-      <input type="checkbox" name="isAdmin" id="isAdmin">
-      <label for="isAdmin">Admin</label>
+      <div id="checkBox" class="flexRow marginBottom1">
+        <input type="checkbox" name="isTeacher" id="isTeacher">
+        <label for="isTeacher" class="marginRight2">Teacher</label>
+        <input type="checkbox" name="isAdmin" id="isAdmin">
+        <label for="isAdmin" class="marginRight2">Admin</label>
+      </div>
+
 
       <button type="submit" name="submit" class="buttonInput">Edit</button>
 
