@@ -13,7 +13,7 @@ if (is_admin($connection, $_SESSION['id'])) {
     <?= $msg->display(); ?>
     <h2>Here you can manage accounts!</h2>
     <form action="<?= $url ?>/manage-account" method="post">
-      <select name="users flexRow">
+      <select name="users">
         <?php
 
         $users = $connection->prepare("
