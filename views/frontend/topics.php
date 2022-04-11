@@ -62,18 +62,25 @@ if (is_teacher($connection, $_SESSION['id']) || is_admin($connection, $_SESSION[
         # LOOP TO OUTPUT ALL EDITABLE DEGREE TOPICS
         $counter = 0;
         foreach ($topics_result as $result) {
-          echo '<div class="flexRow degreeTopic">';
-          echo '<div class="flexColumn">';
-          echo '<label for="examName' . $counter . '">Nazov prace</label>';
-          echo '<input id="examName' . $counter . '" value="' . $result['exam_name'] . '" class="input"></input>';
-          echo '</div>';
-          echo '<div class="flexColumn">';
-          echo '<label for="examContent' . $counter . '">Obsah prace</label>';
-          echo '<input id="examContent' . $counter . '" value="' . $result['exam_content'] . '" class="input"></input>';
-          echo '</div>';
-          echo '<p>Typ prace:' . $result['degree_type'] . '</p>';
-          echo '<button type="submit" name="submit" class="buttonInput">Odoslať</button>';
-          echo '</div>';
+          echo '<div class="flexColumn degreeTopic">' . PHP_EOL;
+          echo '<div class="flexColumn">' . PHP_EOL;
+          echo '<label for="examName' . $counter . '">Nazov prace</label>' . PHP_EOL;
+          echo '<input name="examName' . $counter . '" value="' . $result['exam_name'] . '" class="input" ></input>' . PHP_EOL;
+          echo '</div>' . PHP_EOL;
+          echo '<div class="flexColumn">' . PHP_EOL;
+          echo '<label for="examContent' . $counter . '">Obsah prace</label>' . PHP_EOL;
+          echo '<input name="examContent' . $counter . '" value="' . $result['exam_content'] . '" class="input"></input>' . PHP_EOL;
+          echo '</div>' . PHP_EOL;
+          echo '<div class="flexColumn">' . PHP_EOL;
+          echo '<label for="typeOfExam' . $counter . '">Typ</label>' . PHP_EOL;
+          echo '<select name="typeOfExam' . $counter . '">' . PHP_EOL . '
+                  <option value="masters">Masters</option>' . PHP_EOL . '
+                  <option value="bachelor">Bachelor</option>' . PHP_EOL . '
+                </select>' . PHP_EOL;
+          echo '</div>' . PHP_EOL;
+          echo '<input type="hidden" name="examID' . $counter . '" value="' . $result['exam_id'] . '">' . PHP_EOL;
+          echo '<button type="submit" name="submit" class="buttonInput">Odoslať</button>' . PHP_EOL;
+          echo '</div>' . PHP_EOL;
           $counter++;
         }
         ?>
